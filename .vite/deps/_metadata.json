@@ -1,0 +1,86 @@
+{
+  "hash": "43503119",
+  "browserHash": "504b47e6",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "d265fa3d",
+      "needsInterop": true
+    },
+    "react-toastify": {
+      "src": "../../node_modules/react-toastify/dist/react-toastify.esm.mjs",
+      "file": "react-toastify.js",
+      "fileHash": "4ad0aedb",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "0c5dda72",
+      "needsInterop": false
+    },
+    "@material-tailwind/react": {
+      "src": "../../node_modules/@material-tailwind/react/index.js",
+      "file": "@material-tailwind_react.js",
+      "fileHash": "a663f1ce",
+      "needsInterop": true
+    },
+    "sweetalert2": {
+      "src": "../../node_modules/sweetalert2/dist/sweetalert2.all.js",
+      "file": "sweetalert2.js",
+      "fileHash": "3995ac2e",
+      "needsInterop": true
+    },
+    "js-cookie": {
+      "src": "../../node_modules/js-cookie/dist/js.cookie.mjs",
+      "file": "js-cookie.js",
+      "fileHash": "777ec130",
+      "needsInterop": false
+    },
+    "prop-types": {
+      "src": "../../node_modules/prop-types/index.js",
+      "file": "prop-types.js",
+      "fileHash": "22b84eb7",
+      "needsInterop": true
+    },
+    "react-select": {
+      "src": "../../node_modules/react-select/dist/react-select.esm.js",
+      "file": "react-select.js",
+      "fileHash": "ee2e511e",
+      "needsInterop": false
+    },
+    "react-data-table-component": {
+      "src": "../../node_modules/react-data-table-component/dist/index.es.js",
+      "file": "react-data-table-component.js",
+      "fileHash": "203d776a",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-SCWAHIDT": {
+      "file": "chunk-SCWAHIDT.js"
+    },
+    "chunk-QEVNLIYD": {
+      "file": "chunk-QEVNLIYD.js"
+    },
+    "chunk-XNU3CV6C": {
+      "file": "chunk-XNU3CV6C.js"
+    },
+    "chunk-KXAFXFYI": {
+      "file": "chunk-KXAFXFYI.js"
+    },
+    "chunk-CMV7FJ6M": {
+      "file": "chunk-CMV7FJ6M.js"
+    },
+    "chunk-UMBEC6V5": {
+      "file": "chunk-UMBEC6V5.js"
+    },
+    "chunk-KEE3L4NC": {
+      "file": "chunk-KEE3L4NC.js"
+    },
+    "chunk-ROME4SDB": {
+      "file": "chunk-ROME4SDB.js"
+    }
+  }
+}
