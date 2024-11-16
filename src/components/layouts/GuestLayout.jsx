@@ -9,8 +9,11 @@ export const GuestLayout = () => {
   }
 
   return (
-    <section className="flex px-[5%] flex-col py-5">
-      <img className="md:w-[90px] w-[20%] mb-5 md:mb-0" src={logo} />
+    <section className="flex flex-col px-[5%] py-5">
+      <img
+        className="mb-5 flex w-[20%] items-center justify-center md:mb-0 md:h-screen md:w-[90px]"
+        src={logo}
+      />
       <Outlet />
     </section>
   );

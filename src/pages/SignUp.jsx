@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { InputItem } from "../components/global/InputItem";
 import { useNavigate } from "react-router-dom";
-import signUpImage from "../assets/images/sign-up-image.png";
+import signUpImage from "../assets/images/logo-no-background.svg";
 import axiosClient from "../../axios-client";
 import { ProcessingIcon } from "../utils/icons";
 
@@ -139,7 +139,7 @@ export const SignUp = () => {
   return (
     <section className="flex w-full items-center justify-between">
       <div className="-mt-20 hidden w-[47%] items-center justify-center md:flex">
-        <img src={signUpImage} alt="Sign Up" />
+        <img src={signUpImage} alt="Sign Up" className="w-[60%]" />
       </div>
       <div className="flex w-full items-center md:w-[47%]">
         <div className="border-1 mb-20 flex w-full flex-col items-center rounded-[15px] border border-[#B9B9B9] p-5 py-10 md:p-12 md:py-12">
@@ -167,7 +167,7 @@ export const SignUp = () => {
           </div>
           <div className="mt-5 flex w-full flex-col justify-between md:mt-8">
             <div
-              className="mx-auto mt-5 flex w-[80%] cursor-pointer justify-center rounded-[10px] bg-[#FF8828] p-3 font-nunito text-[15px] font-bold leading-[28px] text-white md:mt-8 md:text-[20px]"
+              className="mx-auto mt-5 flex w-[80%] cursor-pointer justify-center rounded-[10px] bg-[#02aee0] p-3 font-nunito text-[15px] font-bold leading-[28px] text-white md:mt-8 md:text-[20px]"
               onClick={handleSubmit}
             >
               Sign up
@@ -176,7 +176,7 @@ export const SignUp = () => {
           <div className="mt-5 font-nunito text-[14px] font-semibold leading-[24px] text-[#202224] md:mt-8 md:text-[18px]">
             Already have an account?{" "}
             <a
-              className="cursor-pointer text-[#FF8828] underline"
+              className="cursor-pointer text-[#02aee0] underline"
               href="/organization/login"
             >
               {submitting ? <ProcessingIcon /> : "Login"}

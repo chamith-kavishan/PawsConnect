@@ -8,6 +8,7 @@ import {
   PaginateRight,
   EditNewIcon,
   RemoveIcon,
+  ViewIcon,
 } from "../../../utils/icons";
 import { TABLE_HEAD } from "../../../utils/tableArray";
 import axiosClient from "../../../../axios-client";
@@ -17,8 +18,8 @@ import { useStateContext } from "../../../contexts/NavigationContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
+import { ViewReport } from "./ViewReport";
 
 export const Reports = () => {
   const { user } = useStateContext();
@@ -37,6 +38,10 @@ export const Reports = () => {
   const [tableLoading, setTableLoading] = useState(true);
 
   const [expandedReportIndex, setExpandedReportIndex] = useState(null);
+  const [viewReport, setViewReport] = useState(null);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen((cur) => !cur);
 
   const navigate = useNavigate();
 
@@ -81,7 +86,8 @@ export const Reports = () => {
 
   // Handler for clicking view button
   const handleViewClick = (report) => {
-    navigate(`/report/single/${report.idReport}`);
+    setViewReport(report);
+    handleOpen();
   };
 
   //Function to handle customer delete
@@ -197,12 +203,6 @@ export const Reports = () => {
       sortable: true,
     },
     {
-      name: "Age",
-      selector: (row) => row.Age,
-      wrap: false,
-      maxWidth: "auto",
-    },
-    {
       name: "Location",
       selector: (row) => (
         <button
@@ -223,28 +223,55 @@ export const Reports = () => {
     },
     {
       name: "Injured",
-      selector: (row) => row.Injured,
+      selector: (row) => (row.Injured === "no" ? "No" : "Yes"),
       wrap: false,
       maxWidth: "auto",
       right: true,
     },
     {
-      name: "Status",
+      name: "Image",
       selector: (row) => (
-        <div
-          className={`min-w-[70px] cursor-pointer rounded-full px-2 py-[2px] text-center font-poppins text-[11px] font-semibold ${
-            row.Status == 0
-              ? `bg-[#ffe6e6] text-[#FF5B5B]`
-              : `bg-[#d9f3ea] text-[#00B074]`
-          }`}
-          onClick={() => handleReportStatus(row)}
-        >
-          {row.Status == 0 ? "Not Rescued" : "Rescued"}
+        <div className="py-3">
+          <img src={row.profileImageURL} className="h-[100px]" />
         </div>
       ),
       wrap: false,
       maxWidth: "auto",
-      center: true,
+      right: true,
+    },
+    // {
+    //   name: "Status",
+    //   selector: (row) => (
+    //     <div
+    //       className={`min-w-[70px] cursor-pointer rounded-full px-2 py-[2px] text-center font-poppins text-[11px] font-semibold ${
+    //         row.Status == 0
+    //           ? `bg-[#ffe6e6] text-[#FF5B5B]`
+    //           : `bg-[#d9f3ea] text-[#00B074]`
+    //       }`}
+    //       onClick={() => handleReportStatus(row)}
+    //     >
+    //       {row.Status == 0 ? "Not Rescued" : "Rescued"}
+    //     </div>
+    //   ),
+    //   wrap: false,
+    //   maxWidth: "auto",
+    //   center: true,
+    // },
+    {
+      name: "Action",
+      cell: (row) => (
+        <>
+          <Tooltip content="View Report">
+            <IconButton
+              onClick={() => handleViewClick(row)}
+              variant="text"
+              className="bg-white"
+            >
+              <ViewIcon />
+            </IconButton>
+          </Tooltip>
+        </>
+      ),
     },
   ];
 
@@ -505,6 +532,7 @@ export const Reports = () => {
         </div>
       </section>
       <ToastContainer />
+      <ViewReport report={viewReport} handleOpen={handleOpen} open={open} />
     </>
   );
 };

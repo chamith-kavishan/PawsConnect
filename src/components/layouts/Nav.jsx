@@ -1,8 +1,15 @@
-import { navigationButtons, SocialButtons } from "../../utils/dataArrays";
+import { navigationButtons } from "../../utils/dataArrays";
 import logo from "../../assets/images/logo-no-background.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { PrimaryButton } from "../global/PrimaryButton";
 
 export const Nav = () => {
+  const navigate = useNavigate();
+
+  const handleOrganization = () => {
+    navigate("/organization");
+  };
+
   return (
     <section className="px-[16%] font-poppins">
       <div className="h-1 w-full bg-[#10a9d1]"></div>
@@ -24,13 +31,7 @@ export const Nav = () => {
           })}
         </div>
         <div className="flex w-[25%] items-center justify-center gap-2.5 pr-10">
-          {SocialButtons.map((social) => {
-            return (
-              <div className="rounded-full bg-[#d7cec7] p-2.5">
-                <social.icon />
-              </div>
-            );
-          })}
+          <PrimaryButton text="Organization" onClick={handleOrganization} />
         </div>
       </div>
     </section>

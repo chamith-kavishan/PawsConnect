@@ -104,7 +104,7 @@ export const Pets = () => {
             setPets(pets.filter((cus) => cus.idPet !== pet.idPet));
           })
           .catch((error) => {
-            console.error("Error deleting GRN:", error);
+            console.error("Error deleting Pet:", error);
             if (
               error.response &&
               error.response.data &&
@@ -112,7 +112,7 @@ export const Pets = () => {
             ) {
               toast.error(error.response.data.message);
             } else {
-              toast.error("Failed to delete GRN. Please try again.");
+              toast.error("Failed to delete Pet. Please try again.");
             }
           });
       }
@@ -239,24 +239,24 @@ export const Pets = () => {
       maxWidth: "auto",
       right: true,
     },
-    {
-      name: "Status",
-      selector: (row) => (
-        <div
-          className={`min-w-[70px] cursor-pointer rounded-full px-2 py-[2px] text-center font-poppins text-[11px] font-semibold ${
-            row.Status == 0
-              ? `bg-[#ffe6e6] text-[#FF5B5B]`
-              : `bg-[#d9f3ea] text-[#00B074]`
-          }`}
-          onClick={() => handlePetStatus(row)}
-        >
-          {row.Status == 0 ? "Inactive" : "Active"}
-        </div>
-      ),
-      wrap: false,
-      maxWidth: "auto",
-      center: true,
-    },
+    // {
+    //   name: "Status",
+    //   selector: (row) => (
+    //     <div
+    //       className={`min-w-[70px] cursor-pointer rounded-full px-2 py-[2px] text-center font-poppins text-[11px] font-semibold ${
+    //         row.Status == 0
+    //           ? `bg-[#ffe6e6] text-[#FF5B5B]`
+    //           : `bg-[#d9f3ea] text-[#00B074]`
+    //       }`}
+    //       onClick={() => handlePetStatus(row)}
+    //     >
+    //       {row.Status == 0 ? "Inactive" : "Active"}
+    //     </div>
+    //   ),
+    //   wrap: false,
+    //   maxWidth: "auto",
+    //   center: true,
+    // },
     {
       name: "Action",
       cell: (row) => (

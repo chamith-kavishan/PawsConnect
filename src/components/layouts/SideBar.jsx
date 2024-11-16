@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { ListItem, ListItemPrefix } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-import logo from "./../../assets/images/logo-sidebar.png";
-import logoSmall from "../../assets/images/logo.png";
+import logo from "./../../assets/images/logo-no-background.svg";
+import logoSmall from "../../assets/images/logo-no-background.svg";
 import { newNavigationItems } from "../../utils/dataArrays";
 import { CloseSidebarIcon } from "../../utils/icons";
 import { useStateContext } from "../../contexts/NavigationContext";
-import axiosClient from "../../../axios-client";
 import Swal from "sweetalert2";
 
 export const SideBar = ({
@@ -20,7 +19,6 @@ export const SideBar = ({
   const { user } = useStateContext();
 
   const [linkchange, setLinkChange] = useState(false);
-  const [salesmanEnabled, setSalesmanEnabled] = useState(0);
   const [currentUrl, setCurrentUrl] = useState("/dashboard");
 
   const changeUrl = () => {
@@ -75,7 +73,7 @@ export const SideBar = ({
             className="absolute right-0 top-0 md:hidden"
           ></span>
           <div
-            className="z-100 absolute -right-[15px] top-28 hidden aspect-square w-[30px] cursor-pointer items-center justify-center rounded-full bg-[#FF8828] pr-[3px] md:flex"
+            className="z-100 absolute -right-[15px] top-28 hidden aspect-square w-[30px] cursor-pointer items-center justify-center rounded-full bg-[#02aee0] pr-[3px] md:flex"
             onClick={toggleSidebarExpand}
           >
             {sidebarExpanded ? (
@@ -249,7 +247,7 @@ const NavItem = ({
   return (
     <div className={`flex w-full ${sidebarExpanded ? `pr-4` : `pr-3`}`}>
       {currentUrl === link ? (
-        <div className="h-[45px] min-h-1 w-1 rounded-l-lg rounded-r-full bg-[#FF8828]"></div>
+        <div className="h-[45px] min-h-1 w-1 rounded-l-lg rounded-r-full bg-[#02aee0]"></div>
       ) : (
         <div className="h-[45px] min-h-1 w-1 rounded-l-lg rounded-r-full bg-white"></div>
       )}
@@ -259,7 +257,7 @@ const NavItem = ({
             onClick={handleClick}
             className={`${
               currentUrl === link
-                ? "bg-[#FF8828] font-bold text-white focus:bg-[#FF8828] focus:text-white active:bg-[#FF8828] active:text-white"
+                ? "bg-[#02aee0] font-bold text-white focus:bg-[#02aee0] focus:text-white active:bg-[#02aee0] active:text-white"
                 : "font-bold text-[#64728C]"
             } h-[45px] justify-between p-0 font-poppins text-[14px] font-bold leading-[22px]`}
           >

@@ -145,7 +145,7 @@ export const MainLayout = ({ selectedItem }) => {
           transition: "margin-left 0.5s ease-in-out",
         }}
       >
-        <div className="relative flex w-full flex-row items-center justify-between rounded-none bg-[#FF8828] py-3 pl-[3%] pr-[3%] md:pl-[2%] md:pr-[2%] md:before:absolute md:before:left-[-35px] md:before:top-0 md:before:h-[35px] md:before:w-[35px] md:before:bg-[#FF8828] md:before:content-['']">
+        <div className="relative flex w-full flex-row items-center justify-between rounded-none bg-[#02aee0] py-3 pl-[3%] pr-[3%] md:pl-[2%] md:pr-[2%] md:before:absolute md:before:left-[-35px] md:before:top-0 md:before:h-[35px] md:before:w-[35px] md:before:bg-[#02aee0] md:before:content-['']">
           <div>
             <div ref={sideBarButtondownRef} className="flex md:hidden">
               <Tooltip content="Sidebar">
@@ -161,7 +161,7 @@ export const MainLayout = ({ selectedItem }) => {
               {mainPath}
             </div>
             <div className="flex items-center justify-between">
-              <div className="relative hidden w-[250px] md:block">
+              {/* <div className="relative hidden w-[250px] md:block">
                 <i className="absolute left-3 top-1/2 -translate-y-1/2 transform text-white">
                   <SearchIcon />
                 </i>
@@ -170,26 +170,22 @@ export const MainLayout = ({ selectedItem }) => {
                   className="w-full rounded-[15px] bg-[#ffcfa9] py-2 pl-10 pr-3 placeholder:font-poppins placeholder:text-[12px] placeholder:font-semibold placeholder:leading-[18px] placeholder:text-white focus:border-transparent focus:outline-none"
                   placeholder="Search here..."
                 />
-              </div>
+              </div> */}
 
-              <Tooltip content="View Notifications">
+              {/* <Tooltip content="View Notifications">
                 <div className="ml-8 rounded-[20px] bg-[#f59d56] px-3 py-3 md:px-4 md:py-3">
                   <Link to="/notifications">
                     <BellIcon className="h-4 w-4 text-white" />
                   </Link>
                 </div>
-              </Tooltip>
+              </Tooltip> */}
               <div className="relative" ref={dropdownRef}>
                 <Link to="/account" className="ml-2 flex items-center gap-2">
                   <div className="ml-2 w-fit rounded-full bg-gray-500">
                     <UserIcon className="h-12 w-12 text-white md:h-12 md:w-12" />
                   </div>
                   <div className="hidden md:block">
-                    <span className="font-poppins text-[14px] font-semibold leading-[16px] text-white">
-                      {/* {user.First_Name != ""
-                        ? `${user.First_Name} ${user.Last_Name}`
-                        : user.userName} */}
-                    </span>
+                    <span className="font-poppins text-[14px] font-semibold leading-[16px] text-white"></span>
                     <br />
                   </div>
                 </Link>

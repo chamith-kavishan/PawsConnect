@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { Nav } from "../../components/layouts/Nav";
-import { BlogViewHero } from "./BlogViewHero";
+import { PetViewHero } from "./PetViewHero";
 import { Footer } from "../../components/layouts/Footer";
-import { RecentBlogs } from "./RecentBlogs";
+// import { RecentBlogs } from "./RecentBlogs";
 import { Content } from "./Content";
 import { useParams } from "react-router-dom";
 import axiosClient from "../../../axios-client";
 
-export const BlogView = () => {
+export const PetView = () => {
   const { id } = useParams();
 
-  const [blog, setBlog] = useState([]);
+  const [pet, setPet] = useState([]);
 
   useEffect(() => {
-    const fetchBlog = () => {
+    const fetchPet = () => {
       axiosClient
-        .get(`/blog/single/${id}`)
+        .get(`/pet/single/${id}`)
         .then((res) => {
-          setBlog(res.data);
+          setPet(res.data);
         })
         .catch((error) => {
           console.log(error);
         });
     };
-    fetchBlog();
+    fetchPet();
   }, []);
 
   return (
     <div>
       <Nav />
-      <BlogViewHero blog={blog} />
-      <Content blog={blog} />
-      <RecentBlogs />
+      <PetViewHero pet={pet} />
+      <Content pet={pet} />
+      {/* <RecentBlogs /> */}
       <Footer />
     </div>
   );

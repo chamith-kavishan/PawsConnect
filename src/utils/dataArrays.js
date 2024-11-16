@@ -5,6 +5,8 @@ import {
   InstagramIcon,
   YoutubeIcon,
   XIcon,
+  ReportIcon,
+  PetIcon,
 } from "./icons";
 import volunteerImage from "../assets/images/applications/volunteer.jpg";
 import reportAnimals from "../assets/images/samples/pexels-hson-4335585.jpg";
@@ -30,11 +32,6 @@ export const navigationButtons = [
   {
     title: "Blogs",
     link: "/blogs",
-    children: [],
-  },
-  {
-    title: "Pages",
-    link: "/",
     children: [],
   },
 ];
@@ -164,27 +161,15 @@ export const recentBlogsCard = [
 
 export const newNavigationItems = [
   {
-    title: "Dashboard",
-    link: "",
-    icon: DashboardIcon,
-    children: 0,
-  },
-  {
-    title: "Customers",
-    link: "customers",
-    icon: CustomersIcon,
-    children: 0,
-  },
-  {
     title: "Reports",
     link: "organization/reports",
-    icon: CustomersIcon,
+    icon: ReportIcon,
     children: 0,
   },
   {
     title: "Pets",
     link: "organization/pets",
-    icon: CustomersIcon,
+    icon: PetIcon,
     children: 0,
   },
   {

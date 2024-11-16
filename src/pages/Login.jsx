@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosClient from "../../axios-client";
 import { useStateContext } from "../contexts/NavigationContext";
-import signUpImage from "../assets/images/sign-up-image.png";
+import signUpImage from "../assets/images/logo-no-background.svg";
 
 export const Login = () => {
   const { setUser, setToken } = useStateContext();
@@ -65,9 +65,9 @@ export const Login = () => {
 
   return (
     <>
-      <div className="flex w-full items-center justify-between">
+      <div className="mt-5 flex w-full items-center justify-between md:h-screen">
         <div className="-mt-20 hidden w-[47%] items-center justify-center md:flex">
-          <img src={signUpImage} alt="Sign up" />
+          <img src={signUpImage} alt="Sign up" className="w-[60%]" />
         </div>
         <div className="flex w-full items-center md:w-[47%]">
           <form
@@ -125,7 +125,7 @@ export const Login = () => {
               </div>
             </div> */}
             <button
-              className="mt-8 flex w-[80%] cursor-pointer justify-center rounded-[10px] bg-[#FF8828] p-3 font-poppins text-[15px] font-bold leading-[28px] text-white md:text-[20px]"
+              className="mt-8 flex w-[80%] cursor-pointer justify-center rounded-[10px] bg-[#02aee0] p-3 font-poppins text-[15px] font-bold leading-[28px] text-white md:text-[20px]"
               type="submit"
             >
               Sign In
@@ -138,7 +138,7 @@ export const Login = () => {
             <div className="mt-8 font-poppins text-[14px] font-semibold leading-[24px] text-[#202224] md:text-[18px]">
               New to Optimize?{" "}
               <a
-                className="text-[#FF8828] underline"
+                className="text-[#02aee0] underline"
                 href="/organization/sign-up"
               >
                 Create Account

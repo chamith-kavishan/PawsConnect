@@ -1,10 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { MainLayout } from "../components/layouts/MainLayout";
-import { GuestLayout } from "../components/layouts/GuestLayout";
-import { Customer } from "../pages/customers/Customer";
 import { AddCustomer } from "../pages/customers/AddCustomer";
-import { EditCustomer } from "../pages/customers/EditCustomer";
 import { Login } from "../pages/Login";
 import { SignUp } from "../pages/SignUp";
 import { Home } from "../pages/home/Home";
@@ -18,6 +15,7 @@ import { AddBlog } from "../pages/organization/blogs/AddBlog";
 import { Reports } from "../pages/organization/reports/Reports";
 import { Blog } from "../pages/blog/Blog";
 import { BlogView } from "../pages/blog/BlogView";
+import { PetView } from "../pages/adopt-a-pet/PEtView";
 
 const router = createBrowserRouter([
   {
@@ -49,12 +47,16 @@ const router = createBrowserRouter([
     element: <BlogView />,
   },
   {
+    path: "pet/:id",
+    element: <PetView />,
+  },
+  {
     path: "/organization",
     element: <MainLayout />,
     children: [
       {
-        path: "dashboard",
-        element: <Dashboard />,
+        path: "/organization",
+        element: <Reports />,
       },
       {
         path: "reports",
