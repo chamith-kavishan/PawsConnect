@@ -204,18 +204,6 @@ export const Blogs = () => {
       maxWidth: "auto",
     },
     {
-      name: "Image",
-      selector: (row) => (
-        <img
-          src={`http://localhost:8000/${row.Image}`}
-          alt={row.Title}
-          style={{ maxWidth: "100px", maxHeight: "100px" }}
-        />
-      ),
-      wrap: false,
-      maxWidth: "auto",
-    },
-    {
       name: "Status",
       selector: (row) => (
         <div

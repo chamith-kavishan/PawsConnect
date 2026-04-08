@@ -24,8 +24,10 @@ export const ReportModal = ({ handleOpen, open }) => {
           const { latitude, longitude } = position.coords;
           setFormData((prevData) => ({
             ...prevData,
-            Latitude: latitude.toString(),
-            Longitude: longitude.toString(),
+            // Latitude: latitude.toString(),
+            Latitude: "6.8885702",
+            // Longitude: longitude.toString(),
+            Longitude: "79.8574621",
           }));
           setLocationStatus("success");
         },

@@ -81,7 +81,7 @@ export const SignUp = () => {
     try {
       setSubmitting(true);
       const response = await axiosClient.post("/user/register", formData);
-      if (response.status === 200) {
+      if (response.status === 201) {
         toast.success("User registered successfully");
         setFormData({
           Organization_Name: "",
@@ -128,12 +128,6 @@ export const SignUp = () => {
       type: "Password",
       placeholder: "● ● ● ● ● ●",
     },
-    {
-      name: "Location",
-      inputName: "Location",
-      type: "text",
-      placeholder: "",
-    },
   ];
 
   return (
@@ -142,7 +136,7 @@ export const SignUp = () => {
         <img src={signUpImage} alt="Sign Up" className="w-[60%]" />
       </div>
       <div className="flex w-full items-center md:w-[47%]">
-        <div className="border-1 mb-20 flex w-full flex-col items-center rounded-[15px] border border-[#B9B9B9] p-5 py-10 md:p-12 md:py-12">
+        <div className="border-1 mb-20 mt-10 flex w-full flex-col items-center rounded-[15px] border border-[#B9B9B9] p-5 py-10 md:p-12 md:py-12">
           <h3 className="text-center font-poppins text-[32px] font-bold leading-9 text-[#64728C] md:leading-[20px]">
             Create an Account
           </h3>

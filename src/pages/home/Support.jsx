@@ -21,7 +21,7 @@ export const Support = () => {
             Received
           </div>
           <div className="mt-5 w-[60%] text-center text-[22px] text-white">
-            21,525 requests for help from volunteers
+            12 requests for help from volunteers
           </div>
         </div>
         <div className="mb-10 flex h-[550px] w-[50%] flex-col items-center justify-center bg-[#02aee0] shadow-sm">
@@ -45,7 +45,7 @@ export const Support = () => {
             Were Joined
           </div>
           <div className="mt-5 w-[60%] text-center text-[22px] text-[#030305]">
-            32 Animal Welfare Organizations and Volunteers
+            2 Animal Welfare Organizations and Volunteers
           </div>
         </div>
       </div>
